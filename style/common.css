@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "PTMono-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/PTMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: "pango";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../font/Pangolin-Regular.ttf");
+}
+@font-face {
+    font-family: "Regular";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../font/PTSansCaption-Regular.ttf");
+}
+@font-face {
+    font-family: "Bold";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../font/PTSansCaption-Bold.ttf");
+}
+
+p {
+    font-family: "pango", serif;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+h1, h2, h3, h4 {
+
+    font-family: "Bold", serif;
+}
+h2{
+    font-size: 22px;
+}
+
+main {
+    position: relative;
+}
