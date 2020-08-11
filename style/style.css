@@ -1,9 +1,51 @@
-.button{
-    height: 100px;
-    width: 100px;
-    background-color: green;
-    margin: 100px;
+.main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.button2{
-    background-color: brown;
+
+.progress_bur, .number_question, .question, .help_text {
+    height: 5vh;
+    width: 100%;
+    background-color: #999999;
+    border: 1px bisque solid;
+}
+.number_question{
+    height: 15vh;
+}
+.question{
+    height: 45vh;
+}
+.help_text{
+    height: 35vh;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 7%;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    height: 61px;
+    width: 61px;
+    margin: 0 10%;
+    border: 2px white solid;
+    border-radius: 61px;
+    background-repeat: no-repeat;
+    background-position-x: 4px;
+    background-position-y: 5px;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    /*padding-top: 5px;*/
+    line-height: 57px ;
+}
+.button2 {
+    display: none;
+    opacity: 0;
+    background-image: url("../icons/icons8-удалить-48.png");
 }
