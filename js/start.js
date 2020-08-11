@@ -24,7 +24,6 @@ let mainButton2 = document.querySelector('.button2');
 let p;
 if (localStorage.getItem('p') === null || localStorage.getItem('p') === 'человек') {
     localStorage.setItem('p', p = prompt('Хмм... )))\nИ как тебя зовут ?)', ''));
-    console.log(+p );
     if (+p === 0){
         p = 'человек';
         localStorage.setItem('p', p);
@@ -49,22 +48,22 @@ let questionGame = [
         task: 'Как зовут были длинные организатора? ',
         helper: 'у   были длинные влолосы)',
     },
-    // {
-    //     taskNumber: 'three',
-    //     password: 789,
-    //     task: 'Как организатора? ',
-    //     helper: 'у него были длинные  были длинные влолосы)',
-    // },
-    // {
-    //     taskNumber: 'four',
-    //     password: 1011,
-    //     task: 'Как зовут организатора? зовут',
-    //     helper: 'у были длинные него были длинные были длинные влолосы)',
-    // },
-    // {
-    //     taskNumber: 'five',
-    //     password: 1213,
-    //     task: 'Как зовут ',
-    //     helper: 'у него были зовут зовут длинные влолосы)',
-    // },
+    {
+        taskNumber: 'three',
+        password: 789,
+        task: 'Как организатора? ',
+        helper: 'у него были длинные  были длинные влолосы)',
+    },
+    {
+        taskNumber: 'four',
+        password: 1011,
+        task: 'Как зовут организатора? зовут',
+        helper: 'у были длинные него были длинные были длинные влолосы)',
+    },
+    {
+        taskNumber: 'five',
+        password: 1213,
+        task: 'Как зовут ',
+        helper: 'у него были зовут зовут длинные влолосы)',
+    },
 ];

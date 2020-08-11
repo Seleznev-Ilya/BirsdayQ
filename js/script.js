@@ -41,6 +41,7 @@ function switchGame1() {
             taskChanges();
             task();
             taskHelper();
+            progressBurGame();
         }
     }
     /*Animation*/
@@ -61,6 +62,7 @@ mainButton2.addEventListener('click', () => {
         taskChanges();
         task();
         taskHelper();
+        progressBurGame();
         buttonAnimation();
     }
 });

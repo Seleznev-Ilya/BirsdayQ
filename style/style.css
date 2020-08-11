@@ -5,10 +5,8 @@
 }
 
 .progress_bur, .number_question, .question, .help_text {
-    height: 5vh;
+    height: 1vh;
     width: 100%;
-    background-color: #999999;
-    border: 1px bisque solid;
 }
 .number_question{
     height: 15vh;
@@ -91,3 +89,14 @@
     margin: 40% auto;
     text-align: center;
 }
+
+/*Progress bur*/
+.progress_bur{
+    display: flex;
+}
+.itemBur{
+    height: 1vh;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+}
+

@@ -1,3 +1,34 @@
+/*Progress Bur*/
+function progressBurGame() {
+    progressBur.innerHTML = '';
+    for ( let i = 0; i < questionGame.length; i++){
+        let item = document.createElement('div');
+        item.classList.add(`itemBur`);
+        item.classList.add(`itemBur${i}`);
+        item.style.width =  `${document.documentElement.clientWidth / questionGame.length}px`;
+        progressBur.append(item);
+    }
+    progressBurGameHeightLite();
+}
+if (!counter.count) {
+    progressBurGame();
+}
+
+
+/*Progress Bur*/
+function progressBurGameHeightLite() {
+    for ( let i = 0; i < questionGame.length; i++){
+        let burItem = document.querySelector(`.itemBur${i}`);
+        burItem.style.background = ' radial-gradient(white, LightSalmon 40%)';
+    }
+    let burItem = document.querySelector(`.itemBur${localStorage.getItem('counter1') - 1}`);
+    burItem.style.background = ' radial-gradient(white, Crimson 85%)';
+}
+// if (!counter.count) {
+//     progressBurGameHeightLite();
+// }
+
+
 /*Start/Game --- text*/
 function textChanges() {
     questionText.style.opacity = '0';
@@ -55,10 +86,10 @@ if (!counter.count) {
 /*Start button */
 function buttonIntro() {
     if (+localStorage.getItem('start') <= 1) {
-        mainButton1.style.backgroundColor = 'orange';
+        mainButton1.style.backgroundColor  = 'rgb(255,215,0, .6)';
         button1H2.innerText = 'Ok';
     } else if (+localStorage.getItem('start') === 2) {
-        mainButton1.style.backgroundColor = 'limegreen';
+        mainButton1.style.backgroundColor  = 'rgba(3, 166, 120, .6)';
         mainButton1.style.width = '130px';
         button1H2.innerText = 'Start';
     }
@@ -124,4 +155,10 @@ if (+localStorage.getItem('counter1') >= questionGame.length ) {
 
 function buttonFinish() {
     navigation.innerHTML = '';
+    let winnerImg = document.querySelector('.winnerImg');
+    winnerImg.addEventListener('click', ()=>{
+        localStorage.clear();
+        location.reload();
+    } );
 }
+

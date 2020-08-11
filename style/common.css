@@ -48,4 +48,8 @@ main {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    /*background: linear-gradient(#9198e5,HotPink 15% , #9198e5);*/
+    /*background: radial-gradient(circle farthest-corner at 100px 50px, #FBF2EB, #352A3B);*/
+    /*background: radial-gradient(circle at 65% 15%, aqua, darkblue);*/
+    background: linear-gradient(to top left, powderblue, pink);
 }
