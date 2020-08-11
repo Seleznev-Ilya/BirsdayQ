@@ -14,15 +14,18 @@
     height: 15vh;
 }
 .question{
-    height: 45vh;
+    height: 42vh;
+}
+.question p{
+    transition: 600ms;
 }
 .help_text{
-    height: 35vh;
+    height: 38vh;
 }
 
 .navigation {
     position: fixed;
-    bottom: 7%;
+    bottom: 3%;
     right: 0;
     width: 100%;
     display: flex;
@@ -30,22 +33,61 @@
 }
 
 .button {
-    height: 61px;
-    width: 61px;
+    cursor: pointer;
+    height: 62px;
+    width: 62px;
     margin: 0 10%;
-    border: 2px white solid;
-    border-radius: 61px;
+    border: 3px white solid;
+    border-radius: 62px;
     background-repeat: no-repeat;
     background-position-x: 4px;
     background-position-y: 5px;
     color: white;
     text-align: center;
     vertical-align: center;
-    /*padding-top: 5px;*/
-    line-height: 57px ;
+    line-height: 58px ;
+    transition: 700ms;
+}
+.button h2{
+    transition: 700ms;
 }
 .button2 {
     display: none;
     opacity: 0;
     background-image: url("../icons/icons8-удалить-48.png");
+}
+
+/*Task Number*/
+.number_question{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.circle{
+    text-align: center;
+    vertical-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+}
+.circle__sub{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/*question*/
+.question, .help_text{
+    padding: 2% 2% 0;
+}
+/*Finish*/
+.winnerImg{
+    width: 90px;
+    height: auto;
+}
+.winner{
+    margin: 40% auto;
+    text-align: center;
 }
