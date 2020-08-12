@@ -12,45 +12,46 @@ let counter = new Counter();
 let counter1 = new Counter();
 
 function switchGame1() {
-    if (localStorage.getItem('counter1') < questionGame.length ){
-    if (localStorage.getItem('start') < 2) {
-        localStorage.setItem('start', counter.up());
-        /*Animation*/
-        textChanges();
-    } else if (+localStorage.getItem('start') > 1) {
-        let a;
-        counter1.count = localStorage.getItem('counter1');
-        if (!counter1.count) {
-            fCount();
-        } else {
-            a = +prompt(`Ключ (код) дял перехода на ->\nЗадание: (${+counter1.count + 1})`,);
-            if (questionGame[+counter1.count - 1].password === a) {
+    if (localStorage.getItem('counter1') < questionGame.length) {
+        if (localStorage.getItem('start') < 2) {
+            localStorage.setItem('start', counter.up());
+            /*Animation*/
+            textChanges();
+        } else if (+localStorage.getItem('start') > 1) {
+            let a;
+            counter1.count = localStorage.getItem('counter1');
+            if (!counter1.count) {
                 fCount();
             } else {
-                counter1.count = localStorage.getItem('counter1');
+                a = +prompt(`Ключ (код) дял перехода на ->\nЗадание: (${+counter1.count + 1})`,);
+                if (questionGame[+counter1.count - 1].password === a) {
+                    fCount();
+                } else {
+                    counter1.count = localStorage.getItem('counter1');
+                    /*Animation*/
+                    taskChanges();
+                    task();
+                    taskHelper();
+                }
+            }
+
+            function fCount() {
+                localStorage.setItem('counter1', counter1.up());
+                console.log(+localStorage.getItem('counter1'));
                 /*Animation*/
                 taskChanges();
                 task();
                 taskHelper();
+                progressBurGame();
             }
         }
-
-        function fCount() {
-            localStorage.setItem('counter1', counter1.up());
-            /*Animation*/
-            taskChanges();
-            task();
-            taskHelper();
-            progressBurGame();
-        }
-    }
-    /*Animation*/
-    buttonAnimation();
-    }else {
+        /*Animation*/
+        buttonAnimation();
+    } else {
         let a = +prompt(`Ключ (код) дял перехода на ->\nФиниш: (${+counter1.count + 1})`,);
-            if (questionGame[+counter1.count - 1].password === a) {
-                finishGame();
-            }
+        if (questionGame[+counter1.count - 1].password === a) {
+            finishGame();
+        }
     }
 }
 

@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/js/animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/animations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/start.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1596859663686</updated>
       <workItem from="1596859666416" duration="21553000" />
-      <workItem from="1596982182986" duration="62458000" />
+      <workItem from="1596982182986" duration="62733000" />
+      <workItem from="1597228669660" duration="15544000" />
     </task>
     <servers />
   </component>
@@ -83,14 +83,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1596983609045" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1597183341871">
+    <state x="425" y="197" key="run.anything.popup" timestamp="1597246026250">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864/-1280.52.1280.1024@0.0.1536.864" timestamp="1596868257666" />
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1597183341871" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1597246026250" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1597144392192">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1597144392192" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/animations.js</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -9,17 +9,59 @@
     width: 100%;
 }
 .number_question{
-    height: 15vh;
+    height: 14vh;
 }
 .question{
-    height: 42vh;
+    height: 45vh;
 }
 .question p{
     transition: 600ms;
 }
 .help_text{
-    height: 38vh;
+    position: relative;
+    height: 40vh;
 }
+.help_text span{
+    z-index: 0;
+    position: absolute;
+}
+.locker__wrapper{
+    padding: 2% 2% 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    filter: blur(4px);
+    height: 100%;
+    width: 100%;
+}
+.locker{
+    /*display: none;*/
+    position: absolute;
+    top: 3%;
+    left: calc(50% - 39px);
+    background-image: url("../icons/icons8-private-lock-100.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: 100px;
+    height: auto;
+}
+.lockerP{
+    /*display: none;*/
+    opacity: 0;
+    position: absolute;
+    top: 110px;
+    left: calc(50% - 50px);
+}
+.lockerSpan{
+    opacity: .5;
+    position: absolute;
+    top: 140px;
+    left: calc(50% - 25px);
+}
+
+
+
 
 .navigation {
     position: fixed;

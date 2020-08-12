@@ -1,33 +1,29 @@
 /*Progress Bur*/
 function progressBurGame() {
     progressBur.innerHTML = '';
-    for ( let i = 0; i < questionGame.length; i++){
+    for (let i = 0; i < questionGame.length; i++) {
         let item = document.createElement('div');
         item.classList.add(`itemBur`);
         item.classList.add(`itemBur${i}`);
-        item.style.width =  `${document.documentElement.clientWidth / questionGame.length}px`;
+        item.style.width = `${document.documentElement.clientWidth / questionGame.length}px`;
         progressBur.append(item);
     }
     progressBurGameHeightLite();
 }
+
 if (!counter.count) {
     progressBurGame();
 }
 
-
 /*Progress Bur*/
 function progressBurGameHeightLite() {
-    for ( let i = 0; i < questionGame.length; i++){
+    for (let i = 0; i < questionGame.length; i++) {
         let burItem = document.querySelector(`.itemBur${i}`);
         burItem.style.background = ' radial-gradient(white, LightSalmon 40%)';
     }
     let burItem = document.querySelector(`.itemBur${localStorage.getItem('counter1') - 1}`);
     burItem.style.background = ' radial-gradient(white, Crimson 85%)';
 }
-// if (!counter.count) {
-//     progressBurGameHeightLite();
-// }
-
 
 /*Start/Game --- text*/
 function textChanges() {
@@ -40,6 +36,7 @@ function textChanges() {
 }
 
 textChanges();
+
 /*task Number*/
 function taskChanges() {
     circle.style.border = '';
@@ -57,6 +54,7 @@ function taskChanges() {
 if (!counter.count) {
     taskChanges();
 }
+
 /* Task */
 function task() {
     questionText.style.opacity = '0';
@@ -72,10 +70,28 @@ if (!counter.count) {
 
 /* Task Helper */
 function taskHelper() {
-    helpTextP.style.opacity = '0';
+    lockerWrapper.style.filter = 'blur(4px)';
+    helpText.style.opacity = '0';
+    locker.style.opacity = '0';
+    lockerP.style.opacity = '0';
     setTimeout(() => {
-        helpTextP.style.opacity = '1';
+        helpText.style.opacity = '1';
+        locker.style.opacity = '.2';
+        lockerP.style.opacity = '.4';
+        spanWrapper.innerHTML = '';
+        let span = document.createElement('span');
+        span.classList.add(`lockerSpan`);
+        span.classList.add(`lockerSpan${counter1.count}`);
+        spanWrapper.append(span);
         helpTextP.innerText = questionGame[counter1.count - 1].helper;
+        if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null) {
+            timerRelevant();
+        } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === 0) {
+            lockerWrapper.style.filter = 'blur(0px)';
+            let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+            lockerSpan.style.left = 'calc(50% - 69px)';
+            lockerSpan.innerHTML = 'Мжно смотреть';
+        }
     }, 600);
 }
 
@@ -83,13 +99,41 @@ if (!counter.count) {
     taskHelper();
 }
 
+/* TIMER for helper*/
+function timerRelevant() {
+    let dateStamp;
+    let timerId = setInterval(() => {
+        if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null) {
+            dateStamp = +localStorage.getItem(`time${+localStorage.getItem('counter1')}`);
+        } else {
+            dateStamp = 61000;
+        }
+        dateStamp -= 1000;
+        if (counter.count > 0) {
+            localStorage.setItem(`time${+localStorage.getItem('counter1')}`, dateStamp);
+        }
+        let testSec, testMin;
+        testSec = (dateStamp / 1000) % 60;
+        testMin = Math.floor(dateStamp / 60000) % 60;
+        if (testMin < 10) testMin = "0" + testMin;
+        if (testSec < 10) testSec = "0" + testSec;
+        let timer = `${testMin}:${testSec}`;
+        let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+        if (dateStamp < 1) {
+            lockerWrapper.style.filter = 'blur(0px)';
+            clearInterval(timerId);
+        }
+        lockerSpan.innerText = timer;
+    }, 1000);
+}
+
 /*Start button */
 function buttonIntro() {
     if (+localStorage.getItem('start') <= 1) {
-        mainButton1.style.backgroundColor  = 'rgb(255,215,0, .6)';
+        mainButton1.style.backgroundColor = 'rgb(255,215,0, .6)';
         button1H2.innerText = 'Ok';
     } else if (+localStorage.getItem('start') === 2) {
-        mainButton1.style.backgroundColor  = 'rgba(3, 166, 120, .6)';
+        mainButton1.style.backgroundColor = 'rgba(3, 166, 120, .6)';
         mainButton1.style.width = '130px';
         button1H2.innerText = 'Start';
     }
@@ -141,14 +185,14 @@ function finishGame() {
     img.classList.add('winnerImg');
     img.src = 'icons/icons8-медаль-за-первое-место-64.png';
     mainContainer.append(img);
-
     let win = document.createElement('h1');
     win.classList.add('winner');
     win.innerText = `You Win, ${localStorage.getItem('p')}!`;
     mainContainer.append(win);
     buttonFinish();
 }
-if (+localStorage.getItem('counter1') >= questionGame.length ) {
+
+if (+localStorage.getItem('counter1') >= questionGame.length) {
     finishGame();
     buttonFinish();
 }
@@ -156,9 +200,10 @@ if (+localStorage.getItem('counter1') >= questionGame.length ) {
 function buttonFinish() {
     navigation.innerHTML = '';
     let winnerImg = document.querySelector('.winnerImg');
-    winnerImg.addEventListener('click', ()=>{
+    winnerImg.addEventListener('click', () => {
         localStorage.clear();
         location.reload();
-    } );
+    });
 }
+
 
