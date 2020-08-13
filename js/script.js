@@ -37,7 +37,7 @@ function switchGame1() {
 
             function fCount() {
                 localStorage.setItem('counter1', counter1.up());
-                console.log(+localStorage.getItem('counter1'));
+
                 /*Animation*/
                 taskChanges();
                 task();

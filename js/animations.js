@@ -36,7 +36,9 @@ function textChanges() {
 }
 
 textChanges();
-
+// if (!counter1.count) {
+//     textChanges();
+// }
 /*task Number*/
 function taskChanges() {
     circle.style.border = '';
@@ -84,14 +86,18 @@ function taskHelper() {
         span.classList.add(`lockerSpan${counter1.count}`);
         spanWrapper.append(span);
         helpTextP.innerText = questionGame[counter1.count - 1].helper;
+
         if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null) {
             timerRelevant();
-        } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === 0) {
+        } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
             lockerSpan.innerHTML = 'Мжно смотреть';
+        } else {
+            timerRelevant();
         }
+
     }, 600);
 }
 
@@ -102,11 +108,13 @@ if (!counter.count) {
 /* TIMER for helper*/
 function timerRelevant() {
     let dateStamp;
+    // dateStamp = 62000;
+
     let timerId = setInterval(() => {
         if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null) {
             dateStamp = +localStorage.getItem(`time${+localStorage.getItem('counter1')}`);
         } else {
-            dateStamp = 61000;
+            dateStamp = 6000;
         }
         dateStamp -= 1000;
         if (counter.count > 0) {
@@ -119,13 +127,38 @@ function timerRelevant() {
         if (testSec < 10) testSec = "0" + testSec;
         let timer = `${testMin}:${testSec}`;
         let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+        lockerSpan.innerText = timer;
         if (dateStamp < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
+            let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+            lockerSpan.style.left = 'calc(50% - 69px)';
+            lockerSpan.innerHTML = 'Мжно смотреть';
             clearInterval(timerId);
         }
-        lockerSpan.innerText = timer;
     }, 1000);
 }
+if (counter1.count) {
+    if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null) {
+        timerRelevant();
+    } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
+        lockerWrapper.style.filter = 'blur(0px)';
+        // let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+        // lockerSpan.style.left = 'calc(50% - 69px)';
+        // lockerSpan.innerHTML = 'Мжно смотреть';
+    }
+}
+
+
+// if (!counter.count) {
+//     if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== 0) {
+//         timerRelevant(+localStorage.getItem(`time${+localStorage.getItem('counter1')}`));
+//     } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === 0) {
+//         lockerWrapper.style.filter = 'blur(0px)';
+//         let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+//         lockerSpan.style.left = 'calc(50% - 69px)';
+//         lockerSpan.innerHTML = 'Мжно смотреть';
+//     }
+// }
 
 /*Start button */
 function buttonIntro() {
