@@ -87,9 +87,7 @@ function taskHelper() {
         spanWrapper.append(span);
         helpTextP.innerText = questionGame[counter1.count - 1].helper;
 
-        if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null) {
-            timerRelevant();
-        } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
+         if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
