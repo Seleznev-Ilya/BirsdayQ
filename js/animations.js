@@ -19,10 +19,10 @@ if (!counter.count) {
 function progressBurGameHeightLite() {
     for (let i = 0; i < questionGame.length; i++) {
         let burItem = document.querySelector(`.itemBur${i}`);
-        burItem.style.background = ' radial-gradient(white, LightSalmon 40%)';
+        burItem.style.background = ' radial-gradient(white,  #2d231f30 40%)';
     }
     let burItem = document.querySelector(`.itemBur${localStorage.getItem('counter1') - 1}`);
-    burItem.style.background = ' radial-gradient(white, Crimson 85%)';
+    burItem.style.background = ' radial-gradient(white, #1b9038b5 85%)';
 }
 
 /*Start/Game --- text*/
@@ -45,11 +45,11 @@ function taskChanges() {
     circleH2.style.opacity = '0';
     circle__subH3.style.opacity = '0';
     setTimeout(() => {
-        circle.style.border = '2px white solid';
+        circle.style.border = '1px white solid';
         circleH2.style.opacity = '1';
-        circle__subH3.style.opacity = '1';
+        circle__subH3.style.opacity = '.5';
         circleH2.innerText = counter1.count;
-        circle__subH3.innerText = `Задание (${questionGame[counter1.count - 1].taskNumber})`;
+        circle__subH3.innerText = `Задание:`;
     }, 600);
 }
 
@@ -78,8 +78,8 @@ function taskHelper() {
     lockerP.style.opacity = '0';
     setTimeout(() => {
         helpText.style.opacity = '1';
-        locker.style.opacity = '.2';
-        lockerP.style.opacity = '.4';
+        locker.style.opacity = '.3';
+        lockerP.style.opacity = '.5';
         spanWrapper.innerHTML = '';
         let span = document.createElement('span');
         span.classList.add(`lockerSpan`);
@@ -91,7 +91,10 @@ function taskHelper() {
             lockerWrapper.style.filter = 'blur(0px)';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
-            lockerSpan.innerHTML = 'Мжно смотреть';
+             locker.style.opacity = '.05';
+             lockerSpan.style.opacity = '.9';
+             lockerSpan.style.color = 'mediumseagreen';
+             lockerSpan.innerHTML = 'Мжно смотреть';
         } else if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null ){
              --q;
             timerRelevant();
@@ -134,6 +137,9 @@ if (q < 1){
             lockerWrapper.style.filter = 'blur(0px)';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
+            locker.style.opacity = '.05';
+            lockerSpan.style.opacity = '.9';
+            lockerSpan.style.color = 'mediumseagreen';
             lockerSpan.innerHTML = 'Мжно смотреть';
             clearInterval(timerId);
         }
