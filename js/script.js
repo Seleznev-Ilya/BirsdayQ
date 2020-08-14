@@ -60,6 +60,7 @@ mainButton2.addEventListener('click', () => {
     if (counter1.count > 1) {
         localStorage.setItem('counter1', counter1.down());
         /*Animation*/
+
         taskChanges();
         task();
         taskHelper();
