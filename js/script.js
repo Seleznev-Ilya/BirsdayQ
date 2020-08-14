@@ -13,11 +13,16 @@ let counter1 = new Counter();
 
 function switchGame1() {
     if (localStorage.getItem('counter1') < questionGame.length) {
+        if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') === 0) {
+            soundClick();
+        }
         if (localStorage.getItem('start') < 2) {
             localStorage.setItem('start', counter.up());
             /*Animation*/
+
             textChanges();
         } else if (+localStorage.getItem('start') > 1) {
+
             let a;
             counter1.count = localStorage.getItem('counter1');
             if (!counter1.count) {

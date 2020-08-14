@@ -41,7 +41,6 @@ textChanges();
 // }
 /*task Number*/
 function taskChanges() {
-    soundClick();
     circle.style.border = '';
     circleH2.style.opacity = '0';
     circle__subH3.style.opacity = '0';
