@@ -53,7 +53,10 @@ function taskChanges() {
     }, 600);
 }
 
-if (!counter.count) {
+// if (!counter.count) {
+//     taskChanges();
+// }
+if (counter1.count > 0) {
     taskChanges();
 }
 
@@ -249,6 +252,7 @@ function buttonFinish() {
         localStorage. removeItem('p');
         localStorage. removeItem('start');
         localStorage. removeItem('counter1');
+        localStorage. removeItem('audio start');
         for (let i =0; i <  questionGame.length; i++){
             localStorage. removeItem(`time${i}`);
         }

@@ -68,11 +68,11 @@ function startAudio() {
     setTimeout(() => {
         if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0) {
             let audio1 = new Audio(); // Создаём новый элемент Audio
-            audio1.currentTime = ((new Date().getTime() - localStorage.getItem('audio start')) - 500) / 1000; // стартируем на тридцатой минуте
+            audio1.currentTime = ((new Date().getTime() - localStorage.getItem('audio start'))) / 1000; // стартируем на тридцатой минуте
             audio1.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
             audio1.autoplay = true; // Автоматически запускаем
-            console.log('OK ', +localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0, ((new Date().getTime() - localStorage.getItem('audio start')) - 500) / 1000);
-        }
+            console.log('OK ', +localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0, ((new Date().getTime() - localStorage.getItem('audio start'))) / 1000);
+        }  
     }, 0);
 }
 startAudio();
