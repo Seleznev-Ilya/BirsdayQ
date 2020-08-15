@@ -13,14 +13,19 @@ let counter1 = new Counter();
 
 function switchGame1() {
     if (localStorage.getItem('counter1') < questionGame.length) {
-        if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') < 1) {
-            soundClick();
-        }
         if (localStorage.getItem('start') < 2) {
             localStorage.setItem('start', counter.up());
             /*Animation*/
             textChanges();
         } else if (+localStorage.getItem('start') > 1) {
+            if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') === 0) {
+                let time = new Date().getTime();
+                localStorage.setItem('audio start', time);
+                let audio = new Audio(); // Создаём новый элемент Audio
+                // audio.currentTime =  60; // стартируем на тридцатой минуте
+                audio.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
+                audio.autoplay = true; // Автоматически запускаем
+            }
 
             let a;
             counter1.count = localStorage.getItem('counter1');
@@ -58,6 +63,19 @@ function switchGame1() {
         }
     }
 }
+
+function startAudio() {
+    setTimeout(() => {
+        if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0) {
+            let audio1 = new Audio(); // Создаём новый элемент Audio
+            audio1.currentTime = ((new Date().getTime() - localStorage.getItem('audio start')) - 500) / 1000; // стартируем на тридцатой минуте
+            audio1.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
+            audio1.autoplay = true; // Автоматически запускаем
+            console.log('OK ', +localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0, ((new Date().getTime() - localStorage.getItem('audio start')) - 500) / 1000);
+        }
+    }, 0);
+}
+startAudio();
 
 mainButton1.addEventListener('click', switchGame1);
 mainButton2.addEventListener('click', () => {

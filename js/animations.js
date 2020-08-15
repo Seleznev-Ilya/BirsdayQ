@@ -256,4 +256,27 @@ function buttonFinish() {
     });
 }
 
-
+// function startAudio() {
+//     console.log('audio');
+//     if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > -1) {
+//         if ( +localStorage.getItem('counter1') === 1){
+//             function soundClick() {
+//                 let audio = new Audio(); // Создаём новый элемент Audio
+//                 // audio.currentTime =  60; // стартируем на тридцатой минуте
+//                 audio.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
+//                 audio.autoplay = true; // Автоматически запускаем
+//             }
+//             soundClick();
+//         } else {
+//             function soundClick() {
+//                 let audio = new Audio(); // Создаём новый элемент Audio
+//                 audio.currentTime =  60; // стартируем на тридцатой минуте
+//                 audio.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
+//                 audio.autoplay = true; // Автоматически запускаем
+//             }
+//             soundClick();
+//         }
+//
+//     }
+// }
+// startAudio();

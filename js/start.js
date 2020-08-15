@@ -10,9 +10,11 @@ window.onresize = function () {
 };
 function soundClick() {
     let audio = new Audio(); // Создаём новый элемент Audio
+    // audio.currentTime =  60; // стартируем на тридцатой минуте
     audio.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
     audio.autoplay = true; // Автоматически запускаем
 }
+
 let progressBur = document.querySelector('.progress_bur');
 
 let numberQuestion = document.querySelector('.number_question');
