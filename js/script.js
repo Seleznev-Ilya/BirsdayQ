@@ -66,21 +66,22 @@ function switchGame1() {
 }
 
 function startAudio() {
-
-    if (+localStorage.getItem('audio start reload') <= 0) {
-        localStorage.setItem('audio start reload', reload.up());
-        location.reload();
-    }
-    setTimeout(() => {
-        if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0) {
+    if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0) {
+        if (+localStorage.getItem('audio start reload') <= 0) {
+            localStorage.setItem('audio start reload', reload.up());
+            location.reload();
+        }
+        setTimeout(() => {
+            // if (+localStorage.getItem('start') === 2 && +localStorage.getItem('counter1') > 0) {
             let audio1 = new Audio(); // Создаём новый элемент Audio
             audio1.currentTime = ((new Date().getTime() - localStorage.getItem('audio start'))) / 1000; // стартируем на тридцатой минуте
             audio1.src = 'audio/start.mp3'; // Указываем путь к звуку "клика"
             audio1.autoplay = true; // Автоматически запускаем
-        }
-        localStorage.setItem('audio start reload', reload.down());
+            // }
+            localStorage.setItem('audio start reload', reload.down());
 
-    }, 0);
+        }, 0);
+    }
 }
 
 startAudio();
