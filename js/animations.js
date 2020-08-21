@@ -97,7 +97,7 @@ function taskHelper() {
 
          if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
-             lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 10em black';
+             lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 0 black';
              let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
              locker.style.opacity = '.05';
@@ -125,8 +125,8 @@ function timerRelevant() {
 if (q < 1){
     let timerId = setInterval(() => {
         if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null) {
-            // dateStamp = 61000;
-            dateStamp = 2000;
+            dateStamp = 61000;
+            // dateStamp = 2000;
         } else {
             dateStamp = +localStorage.getItem(`time${+localStorage.getItem('counter1')}`);
         }
@@ -145,7 +145,7 @@ if (q < 1){
         lockerSpan.innerText = timer;
         if (dateStamp < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
-            lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 0 black';
+            lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 10em black';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
             locker.style.opacity = '.05';
