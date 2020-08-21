@@ -5,7 +5,12 @@ function progressBurGame() {
         let item = document.createElement('div');
         item.classList.add(`itemBur`);
         item.classList.add(`itemBur${i}`);
+        let itemIn = document.createElement('div');
+        itemIn.classList.add(`itemBurIn`);
+        // itemIn.style.height = '100%';
+        // itemIn.style.width = '10px';
         item.style.width = `${document.documentElement.clientWidth / questionGame.length}px`;
+        item.append(itemIn);
         progressBur.append(item);
     }
     progressBurGameHeightLite();
@@ -18,10 +23,10 @@ if (!counter.count) {
 /*Progress Bur*/
 function progressBurGameHeightLite() {
     for (let i = 0; i < questionGame.length; i++) {
-        let burItem = document.querySelector(`.itemBur${i}`);
+        let burItem = document.querySelector(`.itemBur${i} .itemBurIn`);
         burItem.style.background = ' radial-gradient(white,  #2d231f30 40%)';
     }
-    let burItem = document.querySelector(`.itemBur${localStorage.getItem('counter1') - 1}`);
+    let burItem = document.querySelector(`.itemBur${localStorage.getItem('counter1') - 1} .itemBurIn`);
     burItem.style.background = ' radial-gradient(white, #1b9038b5 85%)';
 }
 
@@ -75,7 +80,7 @@ if (!counter.count) {
 let q =1;
 /* Task Helper */
 function taskHelper() {
-    lockerWrapper.style.filter = 'blur(4px)';
+    lockerWrapper.style.filter = 'blur(5px)';
     helpText.style.opacity = '0';
     locker.style.opacity = '0';
     lockerP.style.opacity = '0';
@@ -92,7 +97,8 @@ function taskHelper() {
 
          if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) !== null && +localStorage.getItem(`time${+localStorage.getItem('counter1')}`) < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
-            let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
+             lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 10em black';
+             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
              locker.style.opacity = '.05';
              lockerSpan.style.opacity = '.9';
@@ -119,7 +125,8 @@ function timerRelevant() {
 if (q < 1){
     let timerId = setInterval(() => {
         if (localStorage.getItem(`time${+localStorage.getItem('counter1')}`) === null) {
-            dateStamp = 61000;
+            // dateStamp = 61000;
+            dateStamp = 2000;
         } else {
             dateStamp = +localStorage.getItem(`time${+localStorage.getItem('counter1')}`);
         }
@@ -138,6 +145,7 @@ if (q < 1){
         lockerSpan.innerText = timer;
         if (dateStamp < 1) {
             lockerWrapper.style.filter = 'blur(0px)';
+            lockerWrapperP.style.textShadow = '0 0 0 black, 0 0 0 black';
             let lockerSpan = document.querySelector(`.lockerSpan${+localStorage.getItem('counter1')}`);
             lockerSpan.style.left = 'calc(50% - 69px)';
             locker.style.opacity = '.05';

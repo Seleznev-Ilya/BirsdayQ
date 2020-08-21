@@ -4,7 +4,9 @@ window.onresize = function () {
         clearTimeout(time);
     time = setTimeout(function () {
         if (documentWidth !== document.documentElement.clientWidth) {
-            location.reload();
+            // location.reload();
+            startAudio();
+
         }
     }, 123);
 };
@@ -30,6 +32,7 @@ let helpText = document.querySelector('.help_text');
 let locker = document.querySelector('.locker');
 let lockerP = document.querySelector('.lockerP');
 let lockerWrapper = document.querySelector('.locker__wrapper');
+let lockerWrapperP = document.querySelector('.locker__wrapper p');
 let helpTextP = document.querySelector('.help_text .locker__wrapper p');
 let spanWrapper = document.querySelector('.spanWrapper');
 

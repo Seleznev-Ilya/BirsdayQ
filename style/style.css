@@ -5,7 +5,7 @@
 }
 
 .progress_bur, .number_question, .question, .help_text {
-    height: 1vh;
+    height: 20px;
     width: 100%;
 }
 .number_question{
@@ -35,6 +35,15 @@
     filter: blur(4px);
     height: 100%;
     width: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.locker__wrapper p{
+    transition: 700ms;
+    /*text-shadow: 0 0 0 black, 0 0 0em black;*/
 }
 .locker{
     /*display: none;*/
@@ -58,8 +67,8 @@
 .lockerSpan{
     opacity: .6;
     position: absolute;
-    top: 130px;
-    left: calc(50% - 25px);
+    top: 133px;
+    left: calc(50% - 24px);
 }
 
 
@@ -139,11 +148,13 @@
 .progress_bur{
     display: flex;
 }
-.itemBur{
-    height: 2.3vh;
+.itemBurIn{
+    height: 20px;
+    width: 20px;
+    border-style: inset;
     /* border-left: 1px black solid; */
     /* border-bottom: 1px black solid; */
     border-radius: 50%;
-    margin: 2px 8%;
+    margin: 2px auto;
 }
 
