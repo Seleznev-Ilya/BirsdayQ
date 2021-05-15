@@ -58,8 +58,8 @@ function switchGame1() {
         /*Animation*/
         buttonAnimation();
     } else {
-        let a = +prompt(`Ключ (код) дял перехода на ->\nФиниш: (${+counter1.count + 1})`,);
-        if (questionGame[+counter1.count - 1].password === a) {
+        let a = prompt(`Ключ (код) дял перехода на ->\nФиниш: (${+counter1.count + 1})`,);
+        if (questionGame[+counter1.count - 1].password === a.toLocaleLowerCase()) {
             finishGame();
         }
     }
