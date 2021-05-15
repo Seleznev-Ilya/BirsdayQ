@@ -33,8 +33,8 @@ function switchGame1() {
             if (!counter1.count) {
                 fCount();
             } else {
-                a = +prompt(`Ключ (код) дял перехода на ->\nЗадание: (${+counter1.count + 1})`,);
-                if (questionGame[+counter1.count - 1].password === a) {
+                a = prompt(`Ключ (код) дял перехода на ->\nЗадание: (${+counter1.count + 1})`,);
+                if (questionGame[+counter1.count - 1].password === a.toLocaleLowerCase()) {
                     fCount();
                 } else {
                     counter1.count = localStorage.getItem('counter1');
