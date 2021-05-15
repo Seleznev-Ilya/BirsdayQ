@@ -243,7 +243,7 @@ function finishGame() {
     mainContainer.append(img);
     let win = document.createElement('h1');
     win.classList.add('winner');
-    win.innerText = `You Win, ${localStorage.getItem('p')}!`;
+    win.innerText = `You Win, ${localStorage.getItem('p')} и твой подарок у человека в черном!`;
     mainContainer.append(win);
     buttonFinish();
 }
